@@ -4,5 +4,5 @@ namespace SignalR.BusinessLayer;
 
 public interface IProductService : IGenericService<Product>
 {
-
+    List<Product> TGetProductsWithCategories();
 }

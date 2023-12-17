@@ -32,6 +32,11 @@ public class ProductManager : IProductService
         return productDAL.GetList();
     }
 
+    public List<Product> TGetProductsWithCategories()
+    {
+        return productDAL.GetProductsWithCategories();
+    }
+
     public void TUpdate(Product entity)
     {
         productDAL.Update(entity);

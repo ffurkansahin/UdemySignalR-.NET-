@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SignalR.BusinessLayer;
 using SignalR.DtoLayer;
+using SignalR.DtoLayer.ProductDto;
 using SignalR.EntityLayer.Entities;
 
 namespace SignalR.WebApi.Controllers
@@ -24,6 +25,12 @@ namespace SignalR.WebApi.Controllers
         public IActionResult ProductList()
         {
             var values = _mapper.Map<List<ResultProductDto>>(_productService.TGetList());
+            return Ok(values);
+        }
+        [HttpGet("ProductListWithCategory")]
+        public IActionResult ProductListWithCategory()
+        {
+            var values = _mapper.Map<List<ResultProductWithCategoriesDto>>(_productService.TGetProductsWithCategories());
             return Ok(values);
         }
         [HttpPost]
