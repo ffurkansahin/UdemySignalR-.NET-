@@ -43,6 +43,7 @@ namespace SignalR.WebApi.Controllers
                 Name = createProductDto.Name,
                 Price = createProductDto.Price,
                 Status = createProductDto.Status,
+                CategoryId=createProductDto.CategoryID
             });
             return Ok("Product added");
         }
@@ -64,6 +65,7 @@ namespace SignalR.WebApi.Controllers
                 Name = updateProductDto.Name,
                 Price = updateProductDto.Price,
                 Status = updateProductDto.Status,
+                CategoryId =updateProductDto.CategoryID
             });
             return Ok("Product updated");
         }
